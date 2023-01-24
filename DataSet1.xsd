@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ogrencilerConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ogrencilerConnectionString (Settings)" PropertyReference="ApplicationSettings.Hafta7.Properties.Settings.GlobalReference.Default.ogrencilerConnectionString" Provider="System.Data.OleDb" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="genelTableAdapter" GeneratorDataComponentClassName="genelTableAdapter" Name="genel" UserDataComponentName="genelTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ogrencilerConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select g.*,a.abdadi,b.badi from genel as g,anabilimdali as a, bolumler as b where g.bkodu=b.bkodu and g.abdkodu=a.abdkodu</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="numara" DataSetColumn="numara" />
+              <Mapping SourceColumn="adi" DataSetColumn="adi" />
+              <Mapping SourceColumn="soyadi" DataSetColumn="soyadi" />
+              <Mapping SourceColumn="dtarihi" DataSetColumn="dtarihi" />
+              <Mapping SourceColumn="dyeri" DataSetColumn="dyeri" />
+              <Mapping SourceColumn="cinsiyet" DataSetColumn="cinsiyet" />
+              <Mapping SourceColumn="resim" DataSetColumn="resim" />
+              <Mapping SourceColumn="abdkodu" DataSetColumn="abdkodu" />
+              <Mapping SourceColumn="bkodu" DataSetColumn="bkodu" />
+              <Mapping SourceColumn="abdadi" DataSetColumn="abdadi" />
+              <Mapping SourceColumn="badi" DataSetColumn="badi" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="anabilimdaliTableAdapter" GeneratorDataComponentClassName="anabilimdaliTableAdapter" Name="anabilimdali" UserDataComponentName="anabilimdaliTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ogrencilerConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select a.*,b.badi from anabilimdali as a, bolumler as b where a.bkodu=b.bkodu</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="abdkodu" DataSetColumn="abdkodu" />
+              <Mapping SourceColumn="abdadi" DataSetColumn="abdadi" />
+              <Mapping SourceColumn="bkodu" DataSetColumn="bkodu" />
+              <Mapping SourceColumn="badi" DataSetColumn="badi" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="bolumlerTableAdapter" GeneratorDataComponentClassName="bolumlerTableAdapter" Name="bolumler" UserDataComponentName="bolumlerTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ogrencilerConnectionString (Settings)" DbObjectName="bolumler" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM `bolumler` WHERE ((`bkodu` = ?) AND ((? = 1 AND `badi` IS NULL) OR (`badi` = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_bkodu" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="bkodu" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_badi" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="badi" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_badi" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="badi" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO `bolumler` (`badi`) VALUES (?)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="badi" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="badi" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select*from bolumler</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE `bolumler` SET `badi` = ? WHERE ((`bkodu` = ?) AND ((? = 1 AND `badi` IS NULL) OR (`badi` = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="badi" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="badi" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_bkodu" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="bkodu" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_badi" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="badi" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_badi" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="badi" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="bkodu" DataSetColumn="bkodu" />
+              <Mapping SourceColumn="badi" DataSetColumn="badi" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="genel" msprop:Generator_TableClassName="genelDataTable" msprop:Generator_TableVarName="tablegenel" msprop:Generator_RowChangedName="genelRowChanged" msprop:Generator_TablePropName="genel" msprop:Generator_RowDeletingName="genelRowDeleting" msprop:Generator_RowChangingName="genelRowChanging" msprop:Generator_RowEvHandlerName="genelRowChangeEventHandler" msprop:Generator_RowDeletedName="genelRowDeleted" msprop:Generator_RowClassName="genelRow" msprop:Generator_UserTableName="genel" msprop:Generator_RowEvArgName="genelRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="numara" msprop:Generator_ColumnVarNameInTable="columnnumara" msprop:Generator_ColumnPropNameInRow="numara" msprop:Generator_ColumnPropNameInTable="numaraColumn" msprop:Generator_UserColumnName="numara" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="adi" msprop:Generator_ColumnVarNameInTable="columnadi" msprop:Generator_ColumnPropNameInRow="adi" msprop:Generator_ColumnPropNameInTable="adiColumn" msprop:Generator_UserColumnName="adi" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="soyadi" msprop:Generator_ColumnVarNameInTable="columnsoyadi" msprop:Generator_ColumnPropNameInRow="soyadi" msprop:Generator_ColumnPropNameInTable="soyadiColumn" msprop:Generator_UserColumnName="soyadi" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="dtarihi" msprop:Generator_ColumnVarNameInTable="columndtarihi" msprop:Generator_ColumnPropNameInRow="dtarihi" msprop:Generator_ColumnPropNameInTable="dtarihiColumn" msprop:Generator_UserColumnName="dtarihi" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="dyeri" msprop:Generator_ColumnVarNameInTable="columndyeri" msprop:Generator_ColumnPropNameInRow="dyeri" msprop:Generator_ColumnPropNameInTable="dyeriColumn" msprop:Generator_UserColumnName="dyeri" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cinsiyet" msprop:Generator_ColumnVarNameInTable="columncinsiyet" msprop:Generator_ColumnPropNameInRow="cinsiyet" msprop:Generator_ColumnPropNameInTable="cinsiyetColumn" msprop:Generator_UserColumnName="cinsiyet" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="resim" msprop:Generator_ColumnVarNameInTable="columnresim" msprop:Generator_ColumnPropNameInRow="resim" msprop:Generator_ColumnPropNameInTable="resimColumn" msprop:Generator_UserColumnName="resim" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="abdkodu" msprop:Generator_ColumnVarNameInTable="columnabdkodu" msprop:Generator_ColumnPropNameInRow="abdkodu" msprop:Generator_ColumnPropNameInTable="abdkoduColumn" msprop:Generator_UserColumnName="abdkodu" type="xs:int" minOccurs="0" />
+              <xs:element name="bkodu" msprop:Generator_ColumnVarNameInTable="columnbkodu" msprop:Generator_ColumnPropNameInRow="bkodu" msprop:Generator_ColumnPropNameInTable="bkoduColumn" msprop:Generator_UserColumnName="bkodu" type="xs:int" minOccurs="0" />
+              <xs:element name="abdadi" msprop:Generator_ColumnVarNameInTable="columnabdadi" msprop:Generator_ColumnPropNameInRow="abdadi" msprop:Generator_ColumnPropNameInTable="abdadiColumn" msprop:Generator_UserColumnName="abdadi" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="badi" msprop:Generator_ColumnVarNameInTable="columnbadi" msprop:Generator_ColumnPropNameInRow="badi" msprop:Generator_ColumnPropNameInTable="badiColumn" msprop:Generator_UserColumnName="badi" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="anabilimdali" msprop:Generator_TableClassName="anabilimdaliDataTable" msprop:Generator_TableVarName="tableanabilimdali" msprop:Generator_RowChangedName="anabilimdaliRowChanged" msprop:Generator_TablePropName="anabilimdali" msprop:Generator_RowDeletingName="anabilimdaliRowDeleting" msprop:Generator_RowChangingName="anabilimdaliRowChanging" msprop:Generator_RowEvHandlerName="anabilimdaliRowChangeEventHandler" msprop:Generator_RowDeletedName="anabilimdaliRowDeleted" msprop:Generator_RowClassName="anabilimdaliRow" msprop:Generator_UserTableName="anabilimdali" msprop:Generator_RowEvArgName="anabilimdaliRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="abdkodu" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnabdkodu" msprop:Generator_ColumnPropNameInRow="abdkodu" msprop:Generator_ColumnPropNameInTable="abdkoduColumn" msprop:Generator_UserColumnName="abdkodu" type="xs:int" minOccurs="0" />
+              <xs:element name="abdadi" msprop:Generator_ColumnVarNameInTable="columnabdadi" msprop:Generator_ColumnPropNameInRow="abdadi" msprop:Generator_ColumnPropNameInTable="abdadiColumn" msprop:Generator_UserColumnName="abdadi" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="bkodu" msprop:Generator_ColumnVarNameInTable="columnbkodu" msprop:Generator_ColumnPropNameInRow="bkodu" msprop:Generator_ColumnPropNameInTable="bkoduColumn" msprop:Generator_UserColumnName="bkodu" type="xs:int" minOccurs="0" />
+              <xs:element name="badi" msprop:Generator_ColumnVarNameInTable="columnbadi" msprop:Generator_ColumnPropNameInRow="badi" msprop:Generator_ColumnPropNameInTable="badiColumn" msprop:Generator_UserColumnName="badi" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="bolumler" msprop:Generator_TableClassName="bolumlerDataTable" msprop:Generator_TableVarName="tablebolumler" msprop:Generator_RowChangedName="bolumlerRowChanged" msprop:Generator_TablePropName="bolumler" msprop:Generator_RowDeletingName="bolumlerRowDeleting" msprop:Generator_RowChangingName="bolumlerRowChanging" msprop:Generator_RowEvHandlerName="bolumlerRowChangeEventHandler" msprop:Generator_RowDeletedName="bolumlerRowDeleted" msprop:Generator_RowClassName="bolumlerRow" msprop:Generator_UserTableName="bolumler" msprop:Generator_RowEvArgName="bolumlerRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="bkodu" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnbkodu" msprop:Generator_ColumnPropNameInRow="bkodu" msprop:Generator_ColumnPropNameInTable="bkoduColumn" msprop:Generator_UserColumnName="bkodu" type="xs:int" />
+              <xs:element name="badi" msprop:Generator_ColumnVarNameInTable="columnbadi" msprop:Generator_ColumnPropNameInRow="badi" msprop:Generator_ColumnPropNameInTable="badiColumn" msprop:Generator_UserColumnName="badi" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:bolumler" />
+      <xs:field xpath="mstns:bkodu" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
