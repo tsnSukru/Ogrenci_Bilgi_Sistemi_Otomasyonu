@@ -7,4 +7,3 @@ This project is my first coding project developed during my first year at univer
 To run this project, you need to have the following software installed:
 
 - Microsoft Access
-- [Python](https://www.python.org/) (version X.X.X)
